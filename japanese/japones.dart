@@ -201,21 +201,17 @@ extension RomajiExtension on String {
   String toHiragana() {
     Random random = Random();
     List<String>? hiraganaList = romajiToHiragana[this];
-    if (hiraganaList != null && hiraganaList.isNotEmpty) {
-      return hiraganaList[random.nextInt(hiraganaList.length)];
-    } else {
-      return 'Sílaba desconhecida';
-    }
+    return (hiraganaList != null && hiraganaList.isNotEmpty)
+        ? hiraganaList[random.nextInt(hiraganaList.length)]
+        : 'Caractere desconhecido';
   }
 
   String toKatakana() {
     Random random = Random();
     List<String>? katakanaList = romajiToKatakana[this];
-    if (katakanaList != null && katakanaList.isNotEmpty) {
-      return katakanaList[random.nextInt(katakanaList.length)];
-    } else {
-      return 'Sílaba desconhecida';
-    }
+    return (katakanaList != null && katakanaList.isNotEmpty)
+        ? katakanaList[random.nextInt(katakanaList.length)]
+        : 'Caractere desconhecido';
   }
 }
 
@@ -228,7 +224,8 @@ int getUserChoice() {
 }
 
 void playARound(Random random, int choice) {
-  bool isHiragana = choice == 1 || (choice == 3 && random.nextBool());
+  // bool isHiragana = choice == 1 || (choice == 3 && random.nextBool());
+  bool isHiragana = choice == 1 || (choice == 3 && random.nextDouble() < 0.75);
   Map<String, List<String>> selectedMap =
       isHiragana ? romajiToHiragana : romajiToKatakana;
 
@@ -242,9 +239,9 @@ void playARound(Random random, int choice) {
   String? userResponse = stdin.readLineSync();
 
   if (userResponse != null && userResponse.toLowerCase() == randomKey) {
-    print('Correto!');
+    print('Correto! ^_^');
   } else {
-    print('Errado. A resposta correta é: $randomKey');
+    print('Errado. T_T\nA resposta correta é: $randomKey');
   }
 }
 
