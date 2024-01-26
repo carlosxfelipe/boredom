@@ -1,18 +1,15 @@
-# Arquivos do Node.js
+# Node.js files
 node_modules/
 npm-debug.log
 yarn-error.log
 
-# Arquivos do Dart
+# Dart files
 .dart_tool/
 .packages
 .pub/
 build/
 
-# Arquivos macOS
-.DS_Store
-
-# Arquivos Kotlin/IntelliJ IDEA
+# Kotlin/IntelliJ IDEA and Gradle files
 *.iml
 .idea/
 out/
@@ -20,16 +17,13 @@ build/
 *.hprof
 *.ipr
 *.iws
-
-# Diretórios de compilação do Gradle
-.gradle/
-build/
-
-# Arquivos de compilação do Kotlin
+*.jar
 *.class
-
-# Diretórios gerados pelo KOTLIN/Native
 kotlin-native/
+.gradle/
 
-# Outros arquivos e diretórios comuns
+# macOS files
+.DS_Store
+
+# Other common files and directories
 *.log
