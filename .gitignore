@@ -22,6 +22,10 @@ build/
 kotlin-native/
 .gradle/
 
+# Rust files
+target/
+Cargo.lock
+
 # macOS files
 .DS_Store
 
